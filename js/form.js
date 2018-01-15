@@ -35,7 +35,7 @@ botaoAdicionar.addEventListener("click", function(event) {
         li.textContent = erro;
         ul.appendChild(li);
     });
-}
+	}
 	function obtemPaciente(form) {
 
 		var paciente = {
@@ -68,8 +68,8 @@ botaoAdicionar.addEventListener("click", function(event) {
 		td.classList.add(classe);	
 		return td;
 	}
+
 	function validaPaciente(paciente) {
-		function validaPaciente(paciente) {
 
     var erros = [];
 
@@ -94,4 +94,10 @@ botaoAdicionar.addEventListener("click", function(event) {
     if (!validaAltura(paciente.altura)) erros.push("Altura é inválida");
 
     return erros;
+	}
+	// Crie esta função em seu form.js
+	function adicionaPacienteNaTabela(paciente) {
+		var pacienteTr = montaTr(paciente);
+		var tabela = document.querySelector("#tabela-pacientes");
+		tabela.appendChild(pacienteTr);
 	}
